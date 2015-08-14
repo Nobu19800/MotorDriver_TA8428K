@@ -117,6 +117,16 @@ RTC::ReturnCode_t MotorDriver_TA8428K::onActivated(RTC::UniqueId ec_id)
 		controller = new TA8428K(response, m_pin1, m_pin2);
 		if(response != MRAA_SUCCESS)
 		{
+			delete controller;
+			controller = NULL;
+			return RTC::RTC_ERROR;
+		}
+	}
+	else
+	{
+		response = controller->setPinNum(m_pin1, m_pin2);
+		if(response != MRAA_SUCCESS)
+		{
 			return RTC::RTC_ERROR;
 		}
 	}
