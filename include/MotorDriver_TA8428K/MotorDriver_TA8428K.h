@@ -243,7 +243,7 @@ class MotorDriver_TA8428K
    */
   int m_pin1;
   /*!
-   * TA8428KのIN1に接続するピン番号
+   * TA8428KのIN2に接続するピン番号
    * - Name: pin2 pin2
    * - DefaultValue: 5
    */
